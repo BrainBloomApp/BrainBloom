@@ -1,0 +1,999 @@
+/* 1. Reset default browser spacing so we have full control*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+/* 2. Set up main page background, font, and text color */
+body {
+    background-color: #fff9fb;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Clean modern font */
+    color: #2c2a2a; /* Soft black text color */
+    line-height: 1.6;
+    font-weight: 500;
+    }
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif; /* Classic editorial serif font */
+    font-weight: 800;
+}
+
+/* 3. Style the italcized words in headings (like "bloom." and "everyone.") */
+h1 em, h2 em {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #dfa3ce;
+}
+
+/* 4. Add breathing room around every section */
+section {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto; /* centers the content on the screen */
+    padding: 60px 24px; /* adds space inside top/bottom and left/right */
+}
+
+/* NAVIGATION BAR */
+header {
+    display: flex; /* logo, nav, button in a horizontal row */
+    justify-content: space-between; /* logo to the left, button to the right */
+    align-items: center;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+header::after,
+section::after {
+    content: "✦  ✧";
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    color: #9298c8;
+    font-size: 0.8rem;
+    letter-spacing: 12px;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.hero::after {
+    top: 12px;
+    right: 28px;
+}
+
+.hero-image::after {
+    content: "✧  ✦  ✧";
+    position: absolute;
+    right: 8%;
+    bottom: 8%;
+    color: #d78cbb;
+    font-size: 0.8rem;
+    letter-spacing: 12px;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #2c2a2a;
+}
+
+/* remove bullet points and put nav links side by side */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px; /* adds even spacing between each link */
+}
+
+nav a {
+    text-decoration: none; /* removes underline from links */
+    color: #555761; /* soft gray */
+    font-size: .95rem;
+    font-weight: 800;
+}
+
+nav a:hover {
+    color: #2c2a2a; /* darkens when hovered over */
+}
+
+/* style the start exploring pill button */
+header button {
+    background-color: #8585bd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: .9rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #82568f;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 40px;
+    padding: 40px 24px 80px 24px;
+}
+
+.hero-text { 
+    flex: 1; /* takes half the space */
+}
+
+.tagline {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #9298c8;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    color: #2c2a2a;
+    margin-bottom: 20px;
+}
+
+.hero-text p:not(.tagline) {
+    font-size: 1.1rem;
+    color: #555761;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* hero action buttons */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-buttons a{
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background color 0.2s;
+}
+
+/* primary button (explore activities) */
+.hero-buttons a:first-child{
+    background-color: #8585bd;
+    color: white;
+}
+
+.hero-buttons a:first-child:hover {
+    background-color: #82568f;
+}
+
+/* secondary button (browse courses) */
+.hero-buttons a:last-child {
+    background-color: transparent;
+    color: #2c2a2a;
+    border: 2px solid #d4d2cc;
+}
+
+.hero-buttons a:last-child:hover {
+    border-color: #8585bd;
+}
+
+/* hero image side */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    width: min(90%, 420px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, #f8f4fc 0 58%, #ede7f7 59% 72%, transparent 73%);
+}
+
+.hero-image svg {
+    position: relative;
+    width: min(100%, 400px);
+    height: auto;
+    overflow: visible;
+    filter: drop-shadow(0 10px 18px rgba(104, 99, 157, 0.1));
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.mission {
+    background-color: #ede7f7;
+    color: #2c2d34;
+    border: 2px solid #ddd4ef;
+    border-radius: 28px;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.mission h2 {
+    color: #2c2d34;
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+}
+
+.mission h2 em {
+    color: #925d9f;
+}
+
+.mission > p {
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    color: #4a4c58;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.mission .tagline {
+    color: #7475a8;
+    font-weight: 800;
+}
+
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.pillar {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(107, 104, 155, 0.08);
+}
+
+.pillar h3 {
+    font-size: 1.1rem;
+    color: #68639d;
+}
+
+.pillar p {
+    font-size: 0.95rem;
+    color: #4a4c58;
+    font-weight: 500;
+}
+
+
+.card {
+    padding: 0; /* Removes outer padding so top banner touches card edges */
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e6e4dc;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.card-banner {
+    width: 220px;
+    min-height: 180px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pastel Banner Colors from your picture */
+.card-banner.blue {
+    background-color: #dbeafa;
+}
+
+.card-banner.mint {
+    background-color: #d9ecdf;
+}
+
+.card-banner.lavender {
+    background-color: #e8e2f2;
+}
+
+/* Top-left white pill badge */
+.card-banner .badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #555761;
+    margin: 0;
+}
+
+/* Center circular icon */
+.card-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #555761;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Bottom white text area */
+.card-body {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #8c8f9a;
+    margin-bottom: 10px;
+}
+
+.cards-grid {
+    display: flex;
+    flex-direction: column; /* Stacks cards horizontally as full-width rows */
+    gap: 24px;
+}
+
+.lesson-box {
+    background: #ffffff;
+    border: 1px solid #ddd4ef;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+.lesson-box h3 {
+    margin-bottom: 8px;
+    color: #68639d;
+}
+
+.lesson-box p + p,
+.lesson-box h3 + p,
+.lesson-box h3 + h3 {
+    margin-top: 10px;
+}
+
+.quiz-box {
+    background: #edf4ff;
+}
+
+.quiz-question {
+    border-top: 1px solid #d1def5;
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+.quiz-question p:first-child {
+    margin-bottom: 8px;
+}
+
+.quiz-feedback {
+    min-height: 22px;
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+.activities {
+    background-color: #edf4ff;
+    border: 2px solid #cedff6;
+    border-radius: 28px;
+    padding: 60px 40px;
+    margin: 40px auto;
+}
+
+.courses {
+    background-color: #e5f3ef;
+    border: 2px solid #cce8df;
+    border-radius: 28px;
+    padding: 60px 40px;
+    margin: 40px auto;
+}
+
+.team {
+    background-color: #e8effd;
+    border: 2px solid #d1def5;
+    border-radius: 28px;
+    padding: 60px 40px;
+    margin: 40px auto;
+}
+
+/* ========================================== */
+/* HOVER EFFECTS & CONSISTENT CARD STYLING    */
+/* ========================================== */
+
+/* 1. Make Courses Look Like Horizontal Cards with Hover */
+.courses .course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.courses .course-item {
+    background-color: #ffffff;
+    border: 1px solid #e6e4dc;
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.courses .course-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.course-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9298c8;
+    font-family: Georgia, serif;
+    margin-right: 20px;
+}
+
+.course-info h3 {
+    font-size: 1.2rem;
+    color: #2c2d34;
+    margin-bottom: 4px;
+}
+
+.course-info p {
+    font-size: 0.95rem;
+    color: #555761;
+}
+
+/* 2. Team Cards Hover Effect */
+.team-card {
+    background-color: #ffffff;
+    border: 1px solid #e6e4dc;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================================== */
+/* BOLDER TEXT & PILL BADGES                  */
+/* ========================================== */
+body {
+    font-weight: 500; /* Makes all body text slightly bolder and easier to read */
+}
+
+h1, h2, h3, .logo, nav a, button, .card a, .course-item a {
+    font-weight: 800; /* Extra bold headings, links, and buttons */
+}
+
+/* Smooth Pill Shape for Badges (CODING, BIOLOGY, PHYSICS, etc.) */
+.badge {
+    border-radius: 999px !important; /* Forces a true pill shape */
+    padding: 6px 14px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================================== */
+/* PASTEL SECTION BACKGROUNDS                 */
+/* ========================================== */
+.mission, .activities, .courses, .team {
+    border-radius: 28px;
+    padding: 60px 40px;
+    margin: 40px auto;
+}
+
+/* 1. Organized Pastel Lavender Mission Box */
+.mission {
+    background-color: #ede7f7; /* Soft pastel pink-lavender */
+    border: 2px solid #ddd4ef;
+    color: #2c2d34;
+    text-align: center;
+}
+
+.mission .tagline {
+    color: #7475a8;
+    font-weight: 800;
+}
+
+.mission h2 {
+    color: #2c2d34;
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+}
+
+.mission h2 em {
+    color: #925d9f;
+}
+
+.mission > p {
+    color: #4a4c58;
+    font-size: 1.1rem;
+    font-weight: 600;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+}
+
+/* Organized 3-Card Grid Inside the Mission Box */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.pillar {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(107, 104, 155, 0.08);
+}
+
+.pillar h3 {
+    color: #68639d;
+    font-size: 1.1rem;
+}
+
+.pillar p {
+    color: #4a4c58;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* 2. Soft Pastel Blue Activities Section */
+.activities {
+    background-color: #edf4ff;
+    border: 2px solid #cedff6;
+}
+
+/* 3. Soft Pastel Mint Courses Section */
+.courses {
+    background-color: #e5f3ef;
+    border: 2px solid #cce8df;
+}
+
+/* 4. Soft Pastel Sky-Blue Team Section */
+.team {
+    background-color: #e8effd;
+    border: 2px solid #d1def5;
+}
+
+/* ========================================== */
+/* CUTER HERO BUTTONS                         */
+/* ========================================== */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px !important;
+    border-radius: 999px !important; /* True pill shape */
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.hero-btn.primary {
+    background-color: #8585bd !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(124, 121, 168, 0.3);
+}
+
+.hero-btn.primary:hover {
+    background-color: #7475a8 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 121, 168, 0.4);
+}
+
+.hero-btn.secondary {
+    background-color: #ffffff !important;
+    color: #2c2d34 !important;
+    border: 2px solid #ddd4ef !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.hero-btn.secondary:hover {
+    border-color: #8585bd !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================== */
+/* COURSE CARDS ALIGNMENT & HOVER EFFECTS     */
+/* ========================================== */
+.courses .course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.courses .course-item {
+    background-color: #ffffff;
+    border: 1px solid #cce8df;
+    border-radius: 18px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 8px rgba(106, 168, 118, 0.05);
+}
+
+/* Hover lift effect for courses */
+.courses .course-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(106, 168, 118, 0.15);
+}
+
+.course-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.course-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.course-number {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #76aa91;
+    font-family: Georgia, serif;
+    min-width: 32px;
+}
+
+.course-info h3 {
+    font-size: 1.15rem;
+    color: #2c2d34;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.course-info p {
+    font-size: 0.9rem;
+    color: #555761;
+    font-weight: 500;
+}
+
+.courses .course-item a {
+    text-decoration: none;
+    color: #66a58e;
+    font-weight: 800;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.courses .course-item a:hover {
+    color: #4f806d;
+    text-decoration: underline;
+}
+/* ========================================== */
+/* HERO BUTTONS SPACING                       */
+/* ========================================== */
+.hero-buttons {
+    display: flex;
+    gap: 24px; /* Increases space between the two hero buttons */
+    margin-top: 24px;
+}
+
+/* ========================================== */
+/* SOCIAL & EMAIL BUTTONS                     */
+/* ========================================== */
+.social-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.social-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #555761;
+    font-weight: 700;
+}
+
+.social-link {
+    color: #68639d;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: #925d9f;
+    text-decoration: underline;
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex: 0 0 auto;
+}
+
+.social-icon .icon-dot {
+    fill: currentColor;
+    stroke: none;
+}
+
+/* ========================================== */
+/* TEAM CARDS & AVATARS                       */
+/* ========================================== */
+.team-card {
+    background-color: #ffffff;
+    border: 1px solid #d1e2f3;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 15px rgba(132, 172, 214, 0.1);
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(132, 172, 214, 0.25);
+}
+
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #f0edf6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* Make entire Activity & Course cards look clickable */
+.card, .course-item {
+    cursor: pointer;
+}
+
+/* Pop-up Modal Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(44, 45, 52, 0.55);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-box {
+    background: #f7f6f2;
+    border-radius: 24px;
+    padding: 36px;
+    max-width: 1180px;
+    height: 88vh;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#modalContent {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.modal-content-wrap {
+    min-height: 0;
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 8px;
+}
+
+.modal-page-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(420px, 1.15fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.modal-page-grid.one-column {
+    grid-template-columns: 1fr;
+}
+
+.modal-nav {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    padding-top: 12px;
+    padding-bottom: 2px;
+    border-top: 1px solid #ddd4ef;
+    background: #f7f6f2;
+    z-index: 2;
+}
+
+.modal-page-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.modal-page-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ddd4ef;
+}
+
+.modal-page-dot.active {
+    width: 24px;
+    border-radius: 999px;
+    background: #8585bd;
+}
+
+.code-preview {
+    background: #27283a;
+    color: #f8f7ff;
+    border-radius: 16px;
+    padding: 20px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.code-preview .code-line {
+    display: block;
+}
+
+.code-preview .pink { color: #f3a6b8; }
+.code-preview .lavender { color: #b8b5e6; }
+.code-preview .mint { color: #8fd3a8; }
+.code-preview .yellow { color: #ffd966; }
+
+.modal-diagram {
+    max-height: 260px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px; right: 22px;
+    background: #ece8f6;
+    border: none;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #2c2d34;
+}
+
+.interactive-box {
+    background: #ece8f6;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 14px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.run-btn, .dna-btn {
+    background: #7c79a8;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.run-btn:hover, .dna-btn:hover {
+    background: #6b689b;
+}
+
+.dna-btn:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.completion-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%);
+    z-index: 1200;
+    background: #68639d;
+    color: #ffffff;
+    border: 3px solid #ddd4ef;
+    border-radius: 999px;
+    padding: 14px 22px;
+    box-shadow: 0 10px 30px rgba(44, 45, 52, 0.22);
+    font-weight: 800;
+}
+
+@media (max-width: 800px) {
+    .modal-box {
+        height: 92vh;
+        padding: 24px 18px;
+    }
+
+    .modal-content-wrap {
+        min-height: 0;
+    }
+
+    .modal-page-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head></title>
-        <meta name="google-site-verification" content="TLijqNJ9aIs_1rBb4X7ZU2joSuKFEFDR5v9nYtVoY_Y" />
+        <meta name="google-site-verification" content="GcD1k9qpV2mT0ZJ0G-kSuce1GhQWL5Q63nrF2q7lxPg" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BrainBloom</title>
@@ -262,7 +262,9 @@
             </div>
         </div>
         <a href="javascript:void(0)">Explore course →</a>
-        <!-- Course 4 -->
+    </div>
+
+    <!-- Course 4 -->
     <div class="course-item" onclick="openModal('astrobiology', event)">
         <div class="course-left">
             <div class="course-icon">
@@ -647,8 +649,9 @@
                     ["A pattern that could be evidence of life", "A crater created by a meteorite", "A rock that has never changed"],
                     ["They show how life might survive in extreme places", "They prove that all aliens look alike", "They explain how planets form"]
                 ], ["The study of life in the universe", "It may allow liquid water to exist on a planet", "A pattern that could be evidence of life", "They show how life might survive in extreme places"])}
+            `
+        }
     };
-};
 
     let circuitClosed = false;
 
@@ -962,9 +965,7 @@ Scientists can study or repair the spot</code></pre>
                 ], ["Its gravity curves paths so strongly that light cannot escape", "The core of a massive star collapses", "The event horizon"])
             ];
         }
-        return [];
-    }
-     if (key === "astrobiology") {
+        if (key === "astrobiology") {
             return [
                 `
                     <div class="modal-page-grid">
@@ -1040,6 +1041,7 @@ Scientists can study or repair the spot</code></pre>
             ];
         }
         return [];
+    }
 
     function openModal(key) {
         currentModalKey = key;

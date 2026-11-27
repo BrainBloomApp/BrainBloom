@@ -262,6 +262,23 @@
             </div>
         </div>
         <a href="javascript:void(0)">Explore course →</a>
+        <!-- Course 4 -->
+    <div class="course-item" onclick="openModal('astrobiology', event)">
+        <div class="course-left">
+            <div class="course-icon">
+                <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+                    <circle cx="32" cy="32" r="24" fill="#dfeaf8"/>
+                    <circle cx="32" cy="32" r="8" fill="#dfa3ce" stroke="#68639d" stroke-width="2"/>
+                    <ellipse cx="32" cy="32" rx="27" ry="10" fill="none" stroke="#8585bd" stroke-width="2" transform="rotate(-18 32 32)"/>
+                </svg>
+            </div>
+            <span class="course-number">04</span>
+            <div class="course-info">
+                <h3>Astrobiology: life beyond Earth</h3>
+                <p>Explore extreme life, habitable worlds, and the search for alien life.</p>
+            </div>
+        </div>
+        <a href="javascript:void(0)">Explore course →</a>
     </div>
 
 </div>
@@ -424,6 +441,12 @@
             "Why cannot light escape a black hole?",
             "How can a black hole form?",
             "What is the name of the boundary around a black hole beyond which nothing can escape?"
+        ],
+        "astrobiology-q": [
+            "What is astrobiology?",
+            "What makes a star's habitable zone important?",
+            "Which is an example of a biosignature?",
+            "Why do scientists study extremophiles?"
         ]
     };
 
@@ -604,8 +627,28 @@
                     ["The event horizon", "The singularity's orbit", "The accretion boundary"]
                 ], ["Its gravity curves paths so strongly that light cannot escape", "The core of a massive star collapses", "The event horizon"])}
             `
-        }
+        },
+        astrobiology: {
+            badge: "MINI-COURSE 04",
+            title: "Astrobiology: Life Beyond Earth",
+            html: `
+                <p><strong>Astrobiology</strong> studies how life begins, evolves, and could exist beyond Earth.</p>
+                <div class="lesson-box">
+                    <h3>1. Life and Its Environment</h3>
+                    <p>Scientists explore whether living things need water, energy, and the right chemical ingredients.</p>
+                    <h3>2. Worlds that Could Be Habitable</h3>
+                    <p>The habitable zone is the area around a star where liquid water may exist on a planet's surface.</p>
+                    <h3>3. Signs of Life</h3>
+                    <p>A biosignature is a pattern or substance that may be evidence of life, but scientists must carefully rule out nonliving explanations.</p>
+                </div>
+                ${quizHtml("astrobiology-q", [
+                    ["The study of life in the universe", "The study of stars and galaxies", "The study of Earth's fossils"],
+                    ["It may allow liquid water to exist on a planet", "It guarantees that every planet has life", "It means the planet is closest to its star"],
+                    ["A pattern that could be evidence of life", "A crater created by a meteorite", "A rock that has never changed"],
+                    ["They show how life might survive in extreme places", "They prove that all aliens look alike", "They explain how planets form"]
+                ], ["The study of life in the universe", "It may allow liquid water to exist on a planet", "A pattern that could be evidence of life", "They show how life might survive in extreme places"])}
     };
+};
 
     let circuitClosed = false;
 
@@ -921,6 +964,82 @@ Scientists can study or repair the spot</code></pre>
         }
         return [];
     }
+     if (key === "astrobiology") {
+            return [
+                `
+                    <div class="modal-page-grid">
+                        <div class="lesson-box">
+                            <h3>What Is Astrobiology?</h3>
+                            <p><strong>Astrobiology</strong> asks how life begins, evolves, and could exist elsewhere in the universe.</p>
+                            <p>It combines biology, chemistry, astronomy, geology, and planetary science.</p>
+                        </div>
+                        <div class="lesson-box">
+                            <h3>The Three Big Questions</h3>
+                            <p>How did life start? Is there life elsewhere? What does life need to survive?</p>
+                            <p>Scientists use evidence from Earth and from space to test ideas.</p>
+                        </div>
+                    </div>
+                `,
+                `
+                    <div class="modal-page-grid">
+                        <div class="lesson-box">
+                            <h3>Life and Liquid Water</h3>
+                            <p>Liquid water helps cells transport materials and carry out chemistry.</p>
+                            <p>Liquid water is a useful clue, but not proof that life exists.</p>
+                        </div>
+                        <div class="lesson-box">
+                            <h3>The Habitable Zone</h3>
+                            <p>This is the region around a star where a planet may be able to have liquid water on its surface.</p>
+                            <p>A planet's atmosphere and orbit also matter.</p>
+                        </div>
+                        <svg class="modal-diagram one-column" viewBox="0 0 520 230" width="100%" role="img" aria-label="Diagram of a star and planetary habitable zone" style="background:#fff; border:1px solid #ddd4ef; border-radius:18px;">
+                            <circle cx="55" cy="115" r="34" fill="#ffd966" stroke="#d49b6a" stroke-width="4"/>
+                            <ellipse cx="265" cy="115" rx="170" ry="55" fill="#e8f0fb" stroke="#8585bd" stroke-width="4" stroke-dasharray="8 7"/>
+                            <circle cx="170" cy="115" r="15" fill="#9ec5f8" stroke="#68639d" stroke-width="3"/>
+                            <circle cx="265" cy="115" r="18" fill="#8fd3a8" stroke="#68639d" stroke-width="3"/>
+                            <circle cx="365" cy="115" r="15" fill="#dfa3ce" stroke="#68639d" stroke-width="3"/>
+                            <text x="265" y="205" text-anchor="middle" fill="#68639d" font-size="16" font-weight="bold">Habitable zone</text>
+                            <text x="55" y="205" text-anchor="middle" fill="#68639d" font-size="16" font-weight="bold">Star</text>
+                        </svg>
+                    </div>
+                `,
+                `
+                    <div class="modal-page-grid">
+                        <div class="lesson-box">
+                            <h3>Extreme Life on Earth</h3>
+                            <p><strong>Extremophiles</strong> are organisms that live in very hot, cold, salty, acidic, or oxygen-poor places.</p>
+                            <p>They expand scientists' ideas about where life might survive.</p>
+                        </div>
+                        <div class="lesson-box">
+                            <h3>Other Possible Worlds</h3>
+                            <p>Mars may once have had lakes or rivers. Europa and Enceladus may hide liquid oceans under icy crusts.</p>
+                            <p>A subsurface ocean could protect life from harmful radiation.</p>
+                        </div>
+                    </div>
+                `,
+                `
+                    <div class="modal-page-grid">
+                        <div class="lesson-box">
+                            <h3>Looking for Biosignatures</h3>
+                            <p>A <strong>biosignature</strong> is a chemical pattern or structure that could indicate life.</p>
+                            <p>Possible clues include unusual gases, ancient organic molecules, or cell-like fossils.</p>
+                        </div>
+                        <div class="lesson-box">
+                            <h3>Why One Clue Is Not Enough</h3>
+                            <p>Some signs can be produced without living organisms.</p>
+                            <p>Scientists look for several independent clues and rule out natural explanations.</p>
+                        </div>
+                    </div>
+                `,
+                quizHtml("astrobiology-q", [
+                    ["The study of life in the universe", "The study of stars and galaxies", "The study of Earth's fossils"],
+                    ["It may allow liquid water to exist on a planet", "It guarantees that every planet has life", "It means the planet is closest to its star"],
+                    ["A pattern that could be evidence of life", "A crater created by a meteorite", "A rock that has never changed"],
+                    ["They show how life might survive in extreme places", "They prove that all aliens look alike", "They explain how planets form"]
+                ], ["The study of life in the universe", "It may allow liquid water to exist on a planet", "A pattern that could be evidence of life", "They show how life might survive in extreme places"])
+            ];
+        }
+        return [];
 
     function openModal(key) {
         currentModalKey = key;
